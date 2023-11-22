@@ -101,7 +101,7 @@ public class Frm_Principal extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/entrar.png"))); // NOI18N
-        jButton3.setText("Entradas");
+        jButton3.setText("Clientes");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +167,7 @@ public class Frm_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Frm_Entrada f = new Frm_Entrada();
+        Frm_Clientes f = new Frm_Clientes();
         contenedor.add(f);
         f.show();
     }//GEN-LAST:event_jButton3ActionPerformed

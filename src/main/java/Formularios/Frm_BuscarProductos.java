@@ -128,7 +128,7 @@ public class Frm_BuscarProductos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txt_busquedaCaretUpdate
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
-        if(Frm_Entrada.enviar == 1){
+        /*if(Frm_Entrada.enviar == 1){
             int row = tabla.getSelectedRow();
             Frm_Entrada.txt_codigo.setText(tabla.getValueAt(row, 0).toString());
             Frm_Entrada.txt_descripcion.setText(tabla.getValueAt(row, 1).toString());
@@ -144,7 +144,7 @@ public class Frm_BuscarProductos extends javax.swing.JInternalFrame {
             Frm_Salida.txt_cantidad.requestFocus();
             Frm_Salida.enviar = 0;
             dispose();
-        }
+        }*/
         
     }//GEN-LAST:event_tablaMouseClicked
 
