@@ -1,31 +1,31 @@
 package Formularios;
 
-import Clases.Cls_Entrada;
+//import Clases.Cls_Entrada;
 import static Formularios.Frm_Principal.contenedor;
 import java.awt.Dimension;
 import java.util.Date;
 
 
 public class Frm_Entrada extends javax.swing.JInternalFrame {
-    private final Cls_Entrada CP;
+    //private final Cls_Entrada CP;
     public static int enviar = 0;
     int num = 0;
     
     public Frm_Entrada() {
         initComponents();
-        CP = new Cls_Entrada();
+        //CP = new Cls_Entrada();
         listar();
         iniciar();
     }
     
     private void listar(){
-        jtb_entrada.setModel(CP.getDatosEntradas());
+        //jtb_entrada.setModel(CP.getDatosEntradas());
     }
     
     private void iniciar(){
         txt_nfactura.setEnabled(false);
         txt_cantidad.setEnabled(false);
-        jdc_fecha.setEnabled(false);
+        //jdc_fecha.setEnabled(false);
         jbt_buscar.setEnabled(false);
         jbt_guardar.setEnabled(false);
     }
@@ -33,7 +33,7 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
     private void activar(){
         txt_nfactura.setEnabled(true);
         txt_cantidad.setEnabled(true);
-        jdc_fecha.setEnabled(true);
+        //jdc_fecha.setEnabled(true);
         jbt_buscar.setEnabled(true);
         jbt_guardar.setEnabled(true);
         txt_nfactura.requestFocus();
@@ -52,17 +52,17 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
         String nfac = txt_nfactura.getText();
         String codigo = txt_codigo.getText();
         int cantidad = Integer.parseInt(txt_cantidad.getText());
-        Date fechaa = jdc_fecha.getDate();
-        long d = fechaa.getTime();
-        java.sql.Date fecha_sql = new java.sql.Date(d);
+        //Date fechaa = jdc_fecha.getDate();
+        //long d = fechaa.getTime();
+        //ava.sql.Date fecha_sql = new java.sql.Date(d);
         
         if(num == 0){
-            int respuesta = CP.registrarEntrada(nfac,codigo,fecha_sql,cantidad);
-            if(respuesta > 0){
-                listar();
-                limpiar();
-                iniciar();
-            }
+            //int respuesta = CP.registrarEntrada(nfac,codigo,fecha_sql,cantidad);
+            //if(respuesta > 0){
+                //listar();
+                //limpiar();
+                //iniciar();
+            //}
         }
     }
     
@@ -80,7 +80,7 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
         txt_cantidad = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jdc_fecha = new com.toedter.calendar.JDateChooser();
+        //jdc_fecha = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_entrada = new javax.swing.JTable();
         jbt_buscar = new javax.swing.JButton();
@@ -113,7 +113,7 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Fecha *");
 
-        jdc_fecha.setDateFormatString("yyyy/MM/dd");
+        //jdc_fecha.setDateFormatString("yyyy/MM/dd");
 
         jtb_entrada.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -193,7 +193,7 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
                                     .addGap(61, 61, 61)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel5)
-                                        .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        //.addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel3)
@@ -226,7 +226,8 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        //.addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        ))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -305,7 +306,7 @@ public class Frm_Entrada extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbt_buscar;
     private javax.swing.JButton jbt_guardar;
-    private com.toedter.calendar.JDateChooser jdc_fecha;
+    //private com.toedter.calendar.JDateChooser jdc_fecha;
     private javax.swing.JTable jtb_entrada;
     public static javax.swing.JTextField txt_cantidad;
     public static javax.swing.JTextField txt_codigo;

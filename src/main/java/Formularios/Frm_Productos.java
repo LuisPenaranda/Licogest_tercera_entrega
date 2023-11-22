@@ -1,19 +1,19 @@
 package Formularios;
 
-import Clases.Cls_Productos;
+//import Clases.Cls_Productos;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableColumnModel;
 
 public class Frm_Productos extends javax.swing.JInternalFrame {
-    private final Cls_Productos CP;
+    //private final Cls_Productos CP;
     TableColumnModel columnModel;
     int num = 0;
     
     public Frm_Productos() {
         initComponents();
-        CP = new Cls_Productos();
+        //CP = new Cls_Productos();
         columnModel = jtb_productos.getColumnModel();
-        listar();
+        //listar();
         iniciar();
         bt_actualizar.setEnabled(false);
         bt_eliminar.setEnabled(false);
@@ -21,7 +21,7 @@ public class Frm_Productos extends javax.swing.JInternalFrame {
     }
 
     private void listar(){
-        jtb_productos.setModel(CP.getDatosProductos());
+        //jtb_productos.setModel(CP.getDatosProductos());
         columnModel.getColumn(1).setPreferredWidth(600);
     }
     
@@ -48,7 +48,7 @@ public class Frm_Productos extends javax.swing.JInternalFrame {
         String descripcion = txt_descripcion.getText();
 
         if(num == 0){
-            int respuesta = CP.registrarProducto(codigo,descripcion);
+            /*int respuesta = CP.registrarProducto(codigo,descripcion);
             if(respuesta > 0){
                 if(CP.verificarCodigoInventario(codigo) == 0){
                     CP.insertarProductoInventario(codigo);
@@ -58,11 +58,11 @@ public class Frm_Productos extends javax.swing.JInternalFrame {
                 limpiar();
                 iniciar();
                 bt_actualizar.setEnabled(false);
-            }
+            }*/
         }
         
         else{
-            int row = jtb_productos.getSelectedRow();
+            /*int row = jtb_productos.getSelectedRow();
             String codigo_old = jtb_productos.getValueAt(row, 0).toString();
             
             int respuesta = CP.actualizarProducto(codigo, descripcion,codigo_old);
@@ -71,7 +71,7 @@ public class Frm_Productos extends javax.swing.JInternalFrame {
                 limpiar();
                 iniciar();
                 num=0;
-            }
+            }*/
         }
         
     }
@@ -271,13 +271,13 @@ public class Frm_Productos extends javax.swing.JInternalFrame {
         else{
             int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea eliminar?","Eliminar Producto", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(resp==0){
-                if (CP.eliminarProducto(jtb_productos.getValueAt(jtb_productos.getSelectedRow(), 0).toString()) > 0){
+                /*if (CP.eliminarProducto(jtb_productos.getValueAt(jtb_productos.getSelectedRow(), 0).toString()) > 0){
                     listar();
                     limpiar();
                     bt_eliminar.setEnabled(false);
                     bt_actualizar.setEnabled(false);
                     bt_guardar.setEnabled(false);
-                }
+                }*/
             }
         }
     }//GEN-LAST:event_bt_eliminarActionPerformed

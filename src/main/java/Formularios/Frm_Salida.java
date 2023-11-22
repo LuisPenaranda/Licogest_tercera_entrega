@@ -1,6 +1,6 @@
 package Formularios;
 
-import Clases.Cls_Salida;
+//import Clases.Cls_Salida;
 import static Formularios.Frm_Principal.contenedor;
 import java.awt.Dimension;
 import java.util.Date;
@@ -9,28 +9,28 @@ import javax.swing.table.TableColumnModel;
 
 
 public class Frm_Salida extends javax.swing.JInternalFrame {
-    private final Cls_Salida CP;
+    //private final Cls_Salida CP;
     TableColumnModel columnModel;
     public static int enviar = 0;
     int num = 0;
     
     public Frm_Salida() {
         initComponents();
-        CP = new Cls_Salida();
+        //CP = new Cls_Salida();
         columnModel = jtb_salida.getColumnModel();
-        listar();
-        iniciar();
+        //listar();
+        //iniciar();
     }
     
     private void listar(){
-        jtb_salida.setModel(CP.getDatosSalida());
+        //jtb_salida.setModel(CP.getDatosSalida());
         columnModel.getColumn(3).setPreferredWidth(350);
     }
     
     private void iniciar(){
         txt_nfactura.setEnabled(false);
         txt_cantidad.setEnabled(false);
-        jdc_fecha.setEnabled(false);
+        //jdc_fecha.setEnabled(false);
         jbt_buscar.setEnabled(false);
         jbt_guardar.setEnabled(false);
     }
@@ -38,7 +38,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
     private void activar(){
         txt_nfactura.setEnabled(true);
         txt_cantidad.setEnabled(true);
-        jdc_fecha.setEnabled(true);
+        //jdc_fecha.setEnabled(true);
         jbt_buscar.setEnabled(true);
         jbt_guardar.setEnabled(true);
         txt_nfactura.requestFocus();
@@ -51,7 +51,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         txt_codigo.setText("");
         txt_descripcion.setText("");
         txt_cantidad.setText("");
-        jdc_fecha.setDate(null);
+        //jdc_fecha.setDate(null);
         txt_nfactura.requestFocus();
         jtb_salida.clearSelection();
     }
@@ -60,13 +60,13 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         String nfac = txt_nfactura.getText();
         String codigo = txt_codigo.getText();
         int cantidad = Integer.parseInt(txt_cantidad.getText());
-        Date fechaa = jdc_fecha.getDate();
-        long d = fechaa.getTime();
-        java.sql.Date fecha_sql = new java.sql.Date(d);
+        //Date fechaa = jdc_fecha.getDate();
+        //long d = fechaa.getTime();
+        //java.sql.Date fecha_sql = new java.sql.Date(d);
         
-        int stock = CP.verificarStock(codigo);
+        //int stock = CP.verificarStock(codigo);
         
-        if(cantidad > stock){
+        /*if(cantidad > stock){
             JOptionPane.showMessageDialog(null, "¡No hay stock suficiente!");
             txt_cantidad.setText("");
             txt_cantidad.requestFocus();
@@ -81,7 +81,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
                     iniciar();
                 }
             }
-        }
+        }*/
         
     }
     
@@ -99,7 +99,6 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         txt_cantidad = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jdc_fecha = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_salida = new javax.swing.JTable();
         jbt_buscar = new javax.swing.JButton();
@@ -132,8 +131,6 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Fecha *");
 
-        jdc_fecha.setDateFormatString("yyyy/MM/dd");
-
         jtb_salida.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -152,7 +149,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         jbt_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ic_consultas.png"))); // NOI18N
         jbt_buscar.setBorderPainted(false);
         jbt_buscar.setContentAreaFilled(false);
-        jbt_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbt_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbt_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbt_buscarActionPerformed(evt);
@@ -163,7 +160,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         bt_nuevo.setText("Nuevo");
         bt_nuevo.setBorderPainted(false);
         bt_nuevo.setContentAreaFilled(false);
-        bt_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bt_nuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_nuevoActionPerformed(evt);
@@ -174,7 +171,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
         jbt_guardar.setText("Registrar Salida");
         jbt_guardar.setBorderPainted(false);
         jbt_guardar.setContentAreaFilled(false);
-        jbt_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbt_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbt_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbt_guardarActionPerformed(evt);
@@ -211,7 +208,6 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
                             .addGap(59, 59, 59)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel5)
-                                .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
@@ -240,9 +236,7 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_nfactura)
-                    .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txt_nfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -320,7 +314,6 @@ public class Frm_Salida extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbt_buscar;
     private javax.swing.JButton jbt_guardar;
-    private com.toedter.calendar.JDateChooser jdc_fecha;
     private javax.swing.JTable jtb_salida;
     public static javax.swing.JTextField txt_cantidad;
     public static javax.swing.JTextField txt_codigo;

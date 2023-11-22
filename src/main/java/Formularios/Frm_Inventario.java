@@ -1,25 +1,25 @@
 package Formularios;
 
-import Clases.Cls_Inventario;
+//import Clases.Cls_Inventario;
 import javax.swing.table.TableColumnModel;
 
 
 public class Frm_Inventario extends javax.swing.JInternalFrame {
-    private final Cls_Inventario CP;
+    //private final Cls_Inventario CP;
     TableColumnModel columnModel;
     public static int enviar = 0;
     int num = 0;
     
     public Frm_Inventario() {
         initComponents();
-        CP = new Cls_Inventario();
+        //CP = new Cls_Inventario();
         columnModel = jtb_inventario.getColumnModel();
         listar();
     }
     
     private void listar(){
-        jtb_inventario.setModel(CP.getDatosInventario());
-        columnModel.getColumn(1).setPreferredWidth(400);
+        /*jtb_inventario.setModel(CP.getDatosInventario());
+        columnModel.getColumn(1).setPreferredWidth(400);*/
     }
     
     

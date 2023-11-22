@@ -1,12 +1,12 @@
 package Formularios;
 
-import Clases.Cls_BuscarProductos;
+//import Clases.Cls_BuscarProductos;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 public class Frm_BuscarProductos extends javax.swing.JInternalFrame {
-    private final Cls_BuscarProductos CP;
+    //private final Cls_BuscarProductos CP;
     TableColumnModel columnModel;
     
     DefaultTableModel DT = new DefaultTableModel(){
@@ -19,13 +19,13 @@ public class Frm_BuscarProductos extends javax.swing.JInternalFrame {
     
     public Frm_BuscarProductos() {
         initComponents();
-        CP = new Cls_BuscarProductos();
+        //CP = new Cls_BuscarProductos();
         columnModel = tabla.getColumnModel();
         listar();
     }
     
     private void listar(){
-        tabla.setModel(CP.getDatosProductos());
+        //tabla.setModel(CP.getDatosProductos());
     }
     
     @SuppressWarnings("unchecked")
@@ -114,16 +114,16 @@ public class Frm_BuscarProductos extends javax.swing.JInternalFrame {
     private void txt_busquedaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_busquedaCaretUpdate
         if(jrb_nombre.isSelected()){
             String inf = txt_busqueda.getText();
-            tabla.setModel(CP.getDatoP(1,inf));
+            //tabla.setModel(CP.getDatoP(1,inf));
         }
         
         if(jrb_codigo.isSelected()){
             String inf = txt_busqueda.getText();
-            tabla.setModel(CP.getDatoP(2,inf));
+            //tabla.setModel(CP.getDatoP(2,inf));
         }
         
         if(txt_busqueda.getText().isEmpty()){
-            tabla.setModel(CP.getDatosProductos());
+            //tabla.setModel(CP.getDatosProductos());
         }
     }//GEN-LAST:event_txt_busquedaCaretUpdate
 
