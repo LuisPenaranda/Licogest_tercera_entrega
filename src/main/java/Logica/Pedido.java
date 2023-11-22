@@ -59,7 +59,7 @@ public class Pedido {
         return costoDomicilio;
     }
 
-    public void setId_domiciliario(double costoDomicilio) {
+    public void setCostoDomicilio(double costoDomicilio) {
         this.costoDomicilio = costoDomicilio;
     }
 

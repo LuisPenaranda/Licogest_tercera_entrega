@@ -4,4 +4,3 @@ Nombre3-Apellido3-3-Dato3-Direccion3-Banco Bogota
 Nombre4-Apellido4-4-Dato4-Direccion4-BanColombia
 Nombre5-Apellido5-5-Dato5-Direccion5-Aval
 Nombre6-Apellido6-6-Dato7-Direccion6-Nequi
-Nombre7-Apellido7-7-Dato6-Direccion7-Aval
