@@ -112,7 +112,7 @@ public class Frm_Principal extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/venta.png"))); // NOI18N
-        jButton4.setText("Salidas");
+        jButton4.setText("Domiciliarios");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +173,7 @@ public class Frm_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Frm_Salida f = new Frm_Salida();
+        Frm_Domiciliarios f = new Frm_Domiciliarios();
         contenedor.add(f);
         f.show();
     }//GEN-LAST:event_jButton4ActionPerformed
