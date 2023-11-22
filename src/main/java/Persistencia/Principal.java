@@ -342,18 +342,41 @@ public class Principal {
                 case 4:
                     System.out.println("Realizar Pedido:");
 
-                    // Mostrar una lista de productos disponibles
-                    System.out.println("Productos disponibles:");
-                    for (int i = 0; i < local.getListaproductos().size(); i++) {
-                        System.out.println(i + ". " + local.getListaproductos().get(i).getNom());
-                    }
+                    ArrayList <Integer> productos_carrito = new ArrayList<>();
+                    int respuesta = 0;
+                    String id_productos_carrito = "";
 
-                    // Permitir al usuario seleccionar un producto
-                    System.out.println("Seleccione un producto (ingrese el número): ");
-                    int indiceProducto = scanner.nextInt();
-                    if (indiceProducto < 0 || indiceProducto >= local.getListaproductos().size()) {
-                        System.out.println("Número de producto no válido.");
-                        break;
+                    while(respuesta == 0){
+                        // Mostrar una lista de productos disponibles
+                    System.out.println("Productos disponibles:");
+                        for (int i = 0; i < local.getListaproductos().size(); i++) {
+                            System.out.println(i + ". " + local.getListaproductos().get(i).getNom());
+                        }
+
+                        // Permitir al usuario seleccionar un producto
+                        System.out.println("Seleccione un producto (ingrese el número): ");
+                        int indiceProducto = scanner.nextInt();
+                        if (indiceProducto < 0 || indiceProducto >= local.getListaproductos().size()) {
+                            System.out.println("Número de producto no válido.");
+                            break;
+                        }
+
+                        if(indiceProducto < 0){
+                            respuesta = 1;
+                        }else{
+                            productos_carrito.add(indiceProducto);
+                        }
+                        
+
+                    }
+                    int iterator_id = 0;
+                    for(int id_producto : productos_carrito){
+                        if(iterator_id == 0){
+                            id_productos_carrito = id_productos_carrito + id_producto;
+                            iterator_id++;
+                        }else{
+                            id_productos_carrito = id_productos_carrito + "_" + id_producto;
+                        }
                     }
 
                     // Mostrar una lista de clientes disponibles
@@ -370,13 +393,28 @@ public class Principal {
                         break;
                     }
 
+                    // Mostrar una lista de domiciliarios disponibles
+                    System.out.println("Domiciliarios disponibles:");
+                    for (int i = 0; i < local.getListaDomiciliarios().size(); i++) {
+                        System.out.println(i + ". " + local.getListaDomiciliarios().get(i).getNombre());
+                    }
+
+                    // Permitir al usuario seleccionar un domiciliario
+                    System.out.println("Seleccione un Domiciliarios (ingrese el número): ");
+                    int indiceDomiciliario = scanner.nextInt();
+                    if (indiceDomiciliario < 0 || indiceDomiciliario >= local.getListaDomiciliarios().size()) {
+                        System.out.println("Número de domiciliario no válido.");
+                        break;
+                    }
+
                     // Solicitar el valor del domicilio
                     System.out.print("Ingrese el valor del domicilio: ");
                     double costoDomicilio = scanner.nextDouble();
 
                     // Obtener el producto y cliente seleccionados
-                    Producto productoSeleccionado = local.getListaproductos().get(indiceProducto);
-                    Cliente clienteSeleccionado = local.getListaClientes().get(indiceCliente);
+                    Pedido nuevo_pedido = new Pedido(local.getPedidos().size() + 1, indiceCliente, id_productos_carrito, indiceDomiciliario, costoDomicilio);
+                    local.getPedidos().add(nuevo_pedido);
+                    local.savePedidos();
                     break;
                 
                 case 5:

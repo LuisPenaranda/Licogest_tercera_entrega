@@ -21,6 +21,7 @@ public class Local {
     public Local() {
         fillListaClientes();
         fillListaProductos();
+        fillListaDomiciliarios();
     }
 
     //GETTERs
@@ -159,6 +160,64 @@ public class Local {
         }
         
     }
+
+    public void fillListaDomiciliarios() {
+        try {
+            File file_domiciliarios = new File("domiciliarios.txt");
+            Scanner reader_domiciliarios = new Scanner(file_domiciliarios);
+            String data_domiciliarios = "";
+
+            while (reader_domiciliarios.hasNextLine()) {
+                data_domiciliarios = reader_domiciliarios.nextLine();
+
+                String[] arrOfStr = data_domiciliarios.split("-", 6);
+                ArrayList<String> aux_data = new ArrayList<>();
+                String aux_nombre = "";
+                String aux_apellido = "";
+                String aux_id = "";
+                String aux_celular = "";
+                String aux_direccion = "";
+                Boolean aux_vpropio = true;
+                Boolean aux_vempresarial = false;
+                int iterator = 0;
+        
+                for (String a : arrOfStr) {
+                    //System.out.println(a);
+                    if(iterator == 0){
+                        aux_nombre = a;
+                    }
+                    if(iterator == 1){
+                        aux_apellido = a;
+                    }
+                    if(iterator == 2){
+                        aux_id = a;
+                    }
+                    if(iterator == 3){
+                        aux_celular = a;
+                    }
+                    if(iterator == 4){
+                        aux_direccion = a;
+                    }
+                    if(iterator == 5){
+                        aux_vpropio = true;
+                    }
+                    if(iterator == 6){
+                        aux_vempresarial = false;
+                    }
+                    iterator++;
+                }
+
+                Domiciliario aux = new Domiciliario(aux_nombre, aux_apellido, aux_id, aux_celular, aux_direccion, aux_vpropio, aux_vempresarial);
+                this.listaDomiciliarios.add(aux);
+            }
+            
+        }catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        
+    }
+
 
     //Saves
     public void saveClientes () {
