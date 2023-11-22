@@ -130,7 +130,7 @@ public class Local {
                 int iterator = 0;
         
                 for (String a : arrOfStr) {
-                    System.out.println("a");
+                    
                     if(iterator == 0){
                         getNom = a;
                     }
